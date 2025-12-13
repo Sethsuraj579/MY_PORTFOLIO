@@ -1,4 +1,4 @@
-import Link from "next/link"
+import { Link }from "react-router"
 
 export function Footer() {
   return (
@@ -14,22 +14,22 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Navigation</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="#about" className="text-muted-foreground hover:text-primary transition-colors">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="#projects" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="#projects" className="text-muted-foreground hover:text-primary transition-colors">
                   Projects
                 </Link>
               </li>
               <li>
-                <Link href="#experience" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="#experience" className="text-muted-foreground hover:text-primary transition-colors">
                   Experience
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="#contact" className="text-muted-foreground hover:text-primary transition-colors">
                   Contact
                 </Link>
               </li>
