@@ -4,10 +4,10 @@ export function Hero() {
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
-            Creative Designer & Developer
+            Suraj - Full Stack Developer
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed text-balance">
-            I craft beautiful, functional digital experiences that solve real problems and delight users.
+            Building scalable web applications with React, Django, and modern cloud technologies.
           </p>
           <div className="flex gap-4">
             <a

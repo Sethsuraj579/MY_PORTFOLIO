@@ -5,14 +5,19 @@ import { Projects } from "../../components/project"
 import { Experience } from "../../components/experience"
 import { Contact } from "../../components/contact"
 import { Footer } from "../../components/footer"
+import type { Project } from "../../components/project"
 
-export default function Home() {
+type HomeProps = {
+  projects: Project[]
+}
+
+export default function Home({ projects }: HomeProps) {
   return (
     <main className="w-full">
       <Navigation />
       <Hero />
       <About />
-      <Projects />
+      <Projects projects={projects} />
       <Experience />
       <Contact />
       <Footer />

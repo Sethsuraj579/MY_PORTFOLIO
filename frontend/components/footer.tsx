@@ -40,12 +40,12 @@ export function Footer() {
             <h4 className="font-semibold text-foreground mb-4">Social</h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/suraj-seth-a139a324a" className="text-muted-foreground hover:text-primary transition-colors">
                   LinkedIn
                 </a>
               </li>
               <li>
-                <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://github.com/Sethsuraj579" className="text-muted-foreground hover:text-primary transition-colors">
                   GitHub
                 </a>
               </li>
@@ -60,15 +60,15 @@ export function Footer() {
           <div>
             <h4 className="font-semibold text-foreground mb-4">Contact</h4>
             <p className="text-muted-foreground text-sm">
-              <a href="mailto:hello@example.com" className="hover:text-primary transition-colors">
-                hello@example.com
+              <a href="mailto:ssurajseth28@gmail.com" className="hover:text-primary transition-colors">
+                ssurajseth28@gmail.com
               </a>
             </p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border">
-          <p className="text-center text-muted-foreground text-sm">© 2025 Your Name. All rights reserved.</p>
+          <p className="text-center text-muted-foreground text-sm">© 2026 Suraj Seth. All rights reserved.</p>
         </div>
       </div>
     </footer>
