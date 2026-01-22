@@ -1,7 +1,18 @@
+import { useState } from "react"
+
+//import { HeroBackground } from "./hero-background"
+
 export function Hero() {
+  const [isHovered, setIsHovered] = useState(false)
+
   return (
-    <section className="w-full pt-32 pb-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+    <section
+      className="relative w-full min-h-[70vh] pt-32 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* <HeroBackground isActive={isHovered} /> */}
+      <div className="relative z-10 max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
             Suraj - Full Stack Developer

@@ -5,10 +5,11 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "react-router";
+} from "react-router"
 
-import type { Route } from "./+types/root";
-import "./app.css";
+import type { Route } from "./+types/root"
+import { PageBackground } from "../components/page-background"
+import "./app.css"
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -33,12 +34,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        {children}
+        <PageBackground />
+        <div className="relative z-10">{children}</div>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
-  );
+  )
 }
 
 export default function App() {

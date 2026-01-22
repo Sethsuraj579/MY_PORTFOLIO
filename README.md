@@ -420,3 +420,4 @@ MIT License - feel free to use this project for your own portfolio!
 - React Router team for the amazing framework
 - Django community for excellent documentation
 - Tailwind CSS for utility-first styling
+

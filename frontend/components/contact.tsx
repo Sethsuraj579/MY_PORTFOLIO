@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
+import { animateFadeIn } from "../lib/animations"
 
 export function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +10,13 @@ export function Contact() {
     email: "",
     message: "",
   })
+  const formRef = useRef<HTMLFormElement>(null)
+
+  useEffect(() => {
+    if (formRef.current) {
+      animateFadeIn(formRef.current)
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -33,7 +40,7 @@ export function Contact() {
             I'm always interested in hearing about new projects and opportunities. Feel free to reach out!
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
                 Name

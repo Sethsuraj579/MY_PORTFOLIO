@@ -14,7 +14,56 @@ type ProjectsProps = {
   projects: Project[]
 }
 
+import { useEffect, useRef } from "react"
+import { animateStaggerChildren } from "../lib/animations"
+
+const defaultProjects: Project[] = [
+  {
+    id: 1,
+    title: "CSS Art Gallery",
+    description:
+      "A curated gallery of CSS illustrations showcasing creative layouts, gradients, and animation techniques.",
+    tags: ["HTML", "CSS", "JavaScript"],
+    image_url: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1200&auto=format&fit=crop",
+    live_url: "https://example.com/css-art-gallery",
+    repo_url: "https://github.com/your-username/css-art-gallery",
+  },
+  {
+    id: 2,
+    title: "Weather Prediction (JupyterLab)",
+    description:
+      "A data science workflow for weather forecasting using feature engineering, model training, and evaluation.",
+    tags: ["Python", "JupyterLab", "Machine Learning"],
+    image_url: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200&auto=format&fit=crop",
+    live_url: "https://example.com/weather-prediction",
+    repo_url: "https://github.com/your-username/weather-prediction",
+  },
+  {
+    id: 3,
+    title: "Goomatu",
+    description:
+      "A modern web app built with Next.js and React featuring a responsive UI and fast navigation.",
+    tags: ["Next.js", "React", "TypeScript"],
+    image_url: "https://images.unsplash.com/photo-1522199710521-72d69614c702?q=80&w=1200&auto=format&fit=crop",
+    live_url: "https://example.com/goomatu",
+    repo_url: "https://github.com/your-username/goomatu",
+  },
+]
+
 export function Projects({ projects }: ProjectsProps) {
+  const displayProjects = projects.length > 0 ? projects : defaultProjects
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (containerRef.current) {
+      animateStaggerChildren(containerRef.current, ".project-card", {
+        duration: 0.6,
+        stagger: 0.15,
+        ease: "power2.out",
+      })
+    }
+  }, [displayProjects])
+
   return (
     <section id="projects" className="w-full py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -23,11 +72,11 @@ export function Projects({ projects }: ProjectsProps) {
           Here are some of my recent projects showcasing my design and development capabilities.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
+        <div ref={containerRef} className="grid md:grid-cols-2 gap-8">
+          {displayProjects.map((project) => (
             <div
               key={project.id}
-              className="group border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
+              className="project-card group border border-border rounded-lg overflow-hidden hover:shadow-lg transition-shadow"
             >
               {project.resolved_image_url || project.image_url ? (
                 <img

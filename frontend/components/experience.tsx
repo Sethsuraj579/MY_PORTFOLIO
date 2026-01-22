@@ -1,39 +1,42 @@
 const experience = [
   {
-    role: "Senior Product Designer",
-    company: "Tech Startup",
-    period: "2022 - Present",
-    description: "Leading design direction and user experience strategy for multiple product lines.",
+    role: "Open Source Contributor",
+    company: "Open Source Community",
+    period: "2024 - Present",
+    description: "Contributing to open-source projects, collaborating on issues, and improving documentation and features.",
   },
   {
-    role: "Full-Stack Developer",
-    company: "Digital Agency",
-    period: "2020 - 2022",
-    description: "Developed and maintained web applications for diverse client base.",
-  },
-  {
-    role: "UI/UX Designer",
-    company: "Creative Studio",
-    period: "2018 - 2020",
-    description: "Created engaging user interfaces and experiences for digital products.",
-  },
-  {
-    role: "Junior Developer",
-    company: "Web Solutions Inc",
-    period: "2017 - 2018",
-    description: "Started career building and learning web development fundamentals.",
+    role: "Virtual Intern",
+    company: "IBM",
+    period: "2025",
+    description: "Completed a virtual internship focused on cloud computing, tooling, and best practices.",
   },
 ]
 
+import * as React from "react"
+import { animateStaggerChildren } from "../lib/animations"
+
 export function Experience() {
+  const containerRef = React.useRef<HTMLDivElement>(null)
+
+  React.useEffect(() => {
+    if (containerRef.current) {
+      animateStaggerChildren(containerRef.current, "[data-experience-item]", {
+        duration: 0.6,
+        stagger: 0.2,
+        ease: "power2.out",
+      })
+    }
+  }, [])
+
   return (
     <section id="experience" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground">Experience</h2>
 
-        <div className="space-y-8">
+        <div ref={containerRef} className="space-y-8">
           {experience.map((exp, index) => (
-            <div key={index} className="flex gap-6">
+            <div key={index} data-experience-item className="flex gap-6">
               <div className="hidden sm:flex flex-col items-center">
                 <div className="w-4 h-4 bg-primary rounded-full"></div>
                 {index < experience.length - 1 && <div className="w-0.5 h-20 bg-border mt-4"></div>}

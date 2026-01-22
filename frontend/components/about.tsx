@@ -1,10 +1,21 @@
+import { useEffect, useRef } from "react"
+import { animateSlideInLeft, animateSlideInRight } from "../lib/animations"
+
 export function About() {
+  const aboutRefLeft = useRef<HTMLDivElement>(null)
+  const aboutRefRight = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (aboutRefLeft.current) animateSlideInLeft(aboutRefLeft.current)
+    if (aboutRefRight.current) animateSlideInRight(aboutRefRight.current, 0.2)
+  }, [])
+
   return (
     <section id="about" className="w-full py-24 px-4 sm:px-6 lg:px-8 bg-card">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground">About Me</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <div ref={aboutRefLeft} className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a passionate designer and developer with a keen eye for detail and a deep love for creating meaningful
               digital experiences. With over 5 years of experience in the industry, I've worked with startups and
@@ -38,7 +49,7 @@ export function About() {
               </div>
             </div>
           </div>
-          <div className="bg-primary/10 rounded-lg p-8 h-80 flex items-center justify-center">
+          <div ref={aboutRefRight} className="bg-primary/10 rounded-lg p-8 h-80 flex items-center justify-center">
             <div className="text-center">
               <div className="w-48 h-48 bg-primary/20 rounded-lg mx-auto mb-4"></div>
               <p className="text-muted-foreground">Portfolio Image</p>
