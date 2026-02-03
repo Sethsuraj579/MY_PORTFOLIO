@@ -12,11 +12,15 @@ export function Hero() {
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* <HeroBackground isActive={isHovered} /> */}
+      
       <div className="relative z-10 max-w-7xl mx-auto">
         <div className="max-w-3xl">
           <h1 className="text-5xl md:text-7xl font-bold text-foreground mb-6 text-balance">
             Suraj - Full Stack Developer
           </h1>
+          <p className="text-lg md:text-xl text-muted-foreground mb-6">
+            Crafting seamless digital experiences with a focus on user-centered design and robust development.
+          </p>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed text-balance">
             Building scalable web applications with React, Django, and modern cloud technologies.
           </p>

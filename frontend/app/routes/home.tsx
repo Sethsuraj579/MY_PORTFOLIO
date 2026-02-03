@@ -6,7 +6,7 @@ import type { Project } from "../../components/project";
 export function meta({}: Route.MetaArgs) {
   return [
     { title: "Suraj Portfolio - Full Stack Developer" },
-    { name: "description", content: "Full-stack developer showcasing web development projects and expertise" },
+    { name: "description", content: "Full-stack developer showcasing web development projects and expertise", },
   ];
 }
 

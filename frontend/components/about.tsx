@@ -18,7 +18,7 @@ export function About() {
           <div ref={aboutRefLeft} className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a passionate designer and developer with a keen eye for detail and a deep love for creating meaningful
-              digital experiences. With over 5 years of experience in the industry, I've worked with startups and
+              digital experiences. Pursuing B.tech in Computer Science, I've worked with startups and
               established companies to bring their visions to life.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
@@ -50,13 +50,25 @@ export function About() {
             </div>
           </div>
           <div ref={aboutRefRight} className="bg-primary/10 rounded-lg p-8 h-80 flex items-center justify-center">
-            <div className="text-center">
-              <div className="w-48 h-48 bg-primary/20 rounded-lg mx-auto mb-4"></div>
-              <p className="text-muted-foreground">Portfolio Image</p>
-            </div>
-          </div>
-        </div>
+            <div className="relative w-64 h-64 md:w-80 md:h-80">
+              {/* Floating Atom Orbit Container */}
+              <div className="floating-atom-container">
+                <div className="floating-atom-orbit"></div>
+                <div className="floating-atom">
+                  <div className="atom-trail"></div>
+                </div>
+              </div>
+              
+              {/* Round Profile Image Center */}
+              <img
+                src="/image/portfolio1.png"
+                alt="Suraj's Profile"
+                className="profile-img absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-72 h-72 m-5 p-5 opacity-67 md:w-80 md:h-80 rounded-full object-cover border-4 border-primary/20 shadow-xl"
+                loading="lazy"/>
+                </div>
       </div>
+    </div>
+  </div>
     </section>
   )
 }

@@ -60,3 +60,143 @@ body {
     linear-gradient(180deg, rgba(15, 23, 42, 0.3), rgba(2, 6, 23, 0.8));
   mix-blend-mode: overlay;
 }
+
+/* Atom Orbits Animation */
+@keyframes orbit1 {
+  from {
+    transform: rotate(0deg) translateX(60px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(60px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit2 {
+  from {
+    transform: rotate(120deg) translateX(50px) rotate(-120deg);
+  }
+  to {
+    transform: rotate(480deg) translateX(50px) rotate(-480deg);
+  }
+}
+
+@keyframes orbit3 {
+  from {
+    transform: rotate(240deg) translateX(55px) rotate(-240deg);
+  }
+  to {
+    transform: rotate(600deg) translateX(55px) rotate(-600deg);
+  }
+}
+
+.atom-container {
+  position: relative;
+  width: fit-content;
+}
+
+.atom-orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 140px;
+  border: 2px solid rgba(59, 130, 246, 0.3);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.atom-orbit:nth-child(1) {
+  animation: orbit1 8s linear infinite;
+}
+
+.atom-orbit:nth-child(2) {
+  animation: orbit2 10s linear infinite reverse;
+}
+
+.atom-orbit:nth-child(3) {
+  animation: orbit3 12s linear infinite;
+}
+
+.atom-electron {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(59, 130, 246, 0.8);
+  border-radius: 50%;
+  top: -3px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
+}
+
+/*.atom-nucleus {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  background: rgba(18, 20, 24, 0.9);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}*/
+
+.profile-img {
+  position: relative;
+  z-index: 10;
+}
+
+/* Floating Atom Animation */
+@keyframes floatingOrbit {
+  0% {
+    transform: rotate(0deg) translateX(120px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(120px) rotate(-360deg);
+  }
+}
+
+.floating-atom-container {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%);
+}
+
+.floating-atom-orbit {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  border: 2px dashed rgba(59, 130, 246, 0.2);
+  border-radius: 50%;
+}
+
+.floating-atom {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: radial-gradient(circle, rgb(85, 134, 233), rgba(165, 194, 240, 0.6));
+  border-radius: 50%;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: floatingOrbit 6s linear infinite;
+  box-shadow: 0 0 10px rgba(186, 202, 228, 0.8);
+  opacity: 50%;
+}
+
+.atom-trail {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 50%;
+  top: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
