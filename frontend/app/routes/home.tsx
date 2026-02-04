@@ -11,7 +11,7 @@ export function meta({}: Route.MetaArgs) {
 }
 
 export async function loader({}: Route.LoaderArgs) {
-  const apiBase = import.meta.env.example.VITE_API_URL || "http://localhost:8000";
+  const apiBase = import.meta.env.VITE_API_URL || "http://localhost:8000";
   const url = new URL("/api/projects/", apiBase);
 
   try {

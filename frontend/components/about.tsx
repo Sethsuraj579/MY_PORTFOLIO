@@ -18,8 +18,8 @@ export function About() {
           <div ref={aboutRefLeft} className="space-y-6">
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm a passionate designer and developer with a keen eye for detail and a deep love for creating meaningful
-              digital experiences. Pursuing B.tech in Computer Science, I've worked with startups and
-              established companies to bring their visions to life.
+              digital experiences. Pursuing B.tech in Computer Science, I've worked on IBM Cloud and
+              doing an open sourcing to bring the best solutions to the community.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               My approach combines strategic thinking with creative problem-solving. I believe the best solutions come
