@@ -34,9 +34,9 @@ git push origin main
    - **Name**: `portfolio-backend`
    - **Region**: Oregon (or closest to you)
    - **Branch**: `main`
-   - **Root Directory**: `backend/backend`
+   - **Root Directory**: `backend`
    - **Runtime**: `Python 3`
-   - **Build Command**: `pip install -r ../requirements.txt`
+   - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn backend.wsgi:application --bind 0.0.0.0:$PORT`
    - **Plan**: Free
 
@@ -49,7 +49,7 @@ DJANGO_SECRET_KEY=<generate-random-50-char-string>
 DJANGO_DEBUG=False
 DJANGO_ALLOWED_HOSTS=<your-backend-url>.onrender.com
 CORS_ALLOWED_ORIGINS=https://<your-frontend-url>.vercel.app
-CSRF_TRUSTED_ORIGINS=https:p//<your-frontend-url>.vercel.app
+CSRF_TRUSTED_ORIGINS=
 ```
 
 ### 2.3 Create PostgreSQL Database

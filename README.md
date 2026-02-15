@@ -60,7 +60,7 @@ source venv/bin/activate
 pip install -r backend/requirements.txt
 
 # Run migrations
-cd backend/backend
+cd backend
 python manage.py migrate
 
 # Create superuser
@@ -197,16 +197,14 @@ Edit \`frontend/components/contact.tsx\`
 ## 🗄️ Database Management
 
 ### Local SQLite
-Database stored at: \`backend/backend/db.sqlite3\`
+ Database stored at: \`backend/db.sqlite3\`
 
 ### Docker PostgreSQL
-- Volume: \`pgdata\` (persists across restarts)
-- Access: \`localhost:5432\`
 
 **Reset Database:**
 \`\`\`bash
 # Local
-rm backend/backend/db.sqlite3
+rm backend/db.sqlite3
 python manage.py migrate
 
 # Docker
@@ -250,7 +248,7 @@ AWS_S3_REGION_NAME=us-east-1
 
 \`\`\`bash
 source venv/bin/activate
-cd backend/backend
+cd backend
 
 # Create migrations
 python manage.py makemigrations
